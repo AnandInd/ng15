@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {},
+   "main": "module.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run lite",
+    "lite": "lite-server"
+  },
+   "author": "",
+  "license": "ISC",
   "devDependencies": {
     "eslint": "^2.5.3",
     "eslint-config-standard": "^5.1.0",
@@ -11,6 +19,8 @@
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.22",
     "karma-chrome-launcher": "^0.2.3",
-    "karma-jasmine": "^0.3.8"
+    "karma-jasmine": "^0.3.8",
+     "lite-server": "^2.2.0"
   }
+  
 }

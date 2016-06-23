@@ -1,7 +1,6 @@
 (function() {
-    "use strict";
-
-    var module = angular.module("psMovies");
+    
+     var module = angular.module("psMovies");
 
     function fetchMovies($http) {
         return $http.get("/movies.json")
@@ -20,12 +19,10 @@
                 model.movies = movies;    
             });
         };
-
-        model.goTo = function(id){
-
-            model.$router.navigate(["Details", {id:id}]);
+          
+        model.setRating = function(movie, rating) { 
+            movie.rating = rating;
         };
-        
         model.upRating = function(movie) {
             if(movie.rating < 5) {
                 movie.rating += 1;
@@ -37,15 +34,23 @@
                 movie.rating -= 1;
             }
         };
+        
+        model.setRating = function(movie, rating) { 
+            movie.rating = rating;
+        };
+        
+        model.goTo = function(id) {
+            model.$router.navigate(["Details", {id:id}, "Overview"]);  
+        };
     }
 
     module.component("movieList", {
+        bindings: {
+            "$router": "<"
+        },
         templateUrl: "/ps-movies/movie-list.component.html",
         controllerAs: "model",
-        controller: ["$http", controller],
-        bindings: {
-            "$router" :"<"
-        }
+        controller: ["$http", controller]
     });
 
 } ());
