@@ -21,7 +21,7 @@
         ]
     });
     
-    module.component("movieOverview", {
+  /*  module.component("movieOverview", {
         template: "this is info about overview" 
     });
 
@@ -32,5 +32,5 @@
     module.component("movieDirector", {
         template: "this is the info about the director" 
     });
-
+    */
 } ());
